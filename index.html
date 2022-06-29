@@ -1,57 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
-        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css">
-        <title>My_Motivation_Timer</title>
-    </head>
-    <body>
-        
-        <div class="top">
-            <div class="budget">
-                <div class="budget__title">
-                   Time didn't wait for you  <span class="budget__title--month"><!--%Month%--></span>:  Look how it Fly
-                </div>
-                
-                <div class="budget__value">+ 2,345.64</div>
-                
-                <!-- <div class="budget__income clearfix">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <!-- <link type="text/css" rel="stylesheet" href="style.css"> -->
+    <title>My_Motivation_Timer</title>
+</head>
+
+<body>
+
+    <div class="top">
+        <div class="budget">
+            <div class="budget__title">
+                Time didn't wait for you <span class="budget__title--month">
+                    <!--%Month%-->
+                </span>: Look how it Fly
+            </div>
+
+            <div class="budget__value">+ 2,345.64</div>
+
+            <!-- <div class="budget__income clearfix">
                     <div class="budget__income--text">Income</div>
                     <div class="right">
                         <div class="budget__income--value">+ 4,300.00</div>
                         <div class="budget__income--percentage">&nbsp;</div>
                     </div>
                 </div> -->
-                
-                <!-- <div class="budget__expenses clearfix">
+
+            <!-- <div class="budget__expenses clearfix">
                     <div class="budget__expenses--text">Expenses</div>
                     <div class="right clearfix">
                         <div class="budget__expenses--value">- 1,954.36</div>
                         <div class="budget__expenses--percentage">45%</div>
                     </div>
                 </div> -->
-            </div>
         </div>
-        
-        
-        
-        <div class="bottom">
-            <div class="add">
-                <div class="add__container">
-                    <!-- <select class="add__type">
+    </div>
+
+
+
+    <div class="bottom">
+        <div class="add">
+            <div class="add__container">
+                <!-- <select class="add__type">
                         <option value="inc" selected>+</option>
                         <option value="exp">-</option>
                     </select>
                     <input type="text" class="add__description" placeholder="Add description">
                     <input type="number" class="add__value" placeholder="Value">
                     <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button> -->
-                </div>
             </div>
-            
-            <div class="container clearfix">
-                <!-- <div class="income">
+        </div>
+
+        <div class="container clearfix">
+            <!-- <div class="income">
                     <h2 class="icome__title">Income</h2>
                     
                     <div class="income__list">
@@ -79,13 +83,13 @@
                             </div>
                         </div>
                         -->
-                        
-                    </div>
-                </div> 
-                
-                
-                
-                <!-- <div class="expenses">
+
+        </div>
+    </div>
+
+
+
+    <!-- <div class="expenses">
                     <h2 class="expenses__title">Expenses</h2>
                     
                     <div class="expenses__list">
@@ -113,14 +117,95 @@
                             </div>
                         </div>
                         -->
-                        
-                    </div>
-                </div> 
-            </div>
-            
-            
-        </div>
-        
-        <script src="app.js"></script>
-    </body>
+
+    </div>
+    </div>
+    </div>
+
+
+    </div>
+
+    <script>
+        setInterval(() => {
+            var date = new Date();
+
+            document.querySelector('.budget__value').innerHTML = `${date.getHours()} : ${date.getMinutes()}  :  ${date.getSeconds()}  :  ${date.getMilliseconds()}`;
+        }, 100)
+    </script>
+    <style>
+        /**********************************************
+*** GENERAL
+**********************************************/
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        body {
+            color: #555;
+            font-family: Open Sans;
+            font-size: 16px;
+            position: relative;
+            height: 100vh;
+            font-weight: 400;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .red {
+            color: #FF5049 !important;
+        }
+
+        .red-focus:focus {
+            border: 1px solid #FF5049 !important;
+        }
+
+        /**********************************************
+*** TOP PART
+**********************************************/
+
+        .top {
+            height: 40vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(back.png);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .budget {
+            position: absolute;
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+        }
+
+        .budget__title {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .budget__value {
+            font-weight: 300;
+            font-size: 40px;
+            text-align: left;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+    </style>
+</body>
+
 </html>
